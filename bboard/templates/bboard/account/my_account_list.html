@@ -1,0 +1,154 @@
+{% extends "bboard/base.html" %}
+{% load thumbnail %}
+{% load bboard_tags %}
+
+
+    <!-- Hero Section Begin -->
+    {% block hero_class %}
+    <section class="hero hero-normal">
+    {% endblock %}
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Категории</span>
+                        </div>
+                        <ul>
+                            {% for category in categories %}
+                            <li><a href="#">{{ category.category_name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+65 11.188.888</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    {% block banner %}
+    {% endblock %}
+    <!-- Hero Section End -->
+
+    {% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    {% get_default_banner as banners %}
+    {% for banner in banners %}
+    <section class="breadcrumb-section set-bg" data-setbg="{{ banner.image.url }}">
+    {% endfor %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Мої проєкти</h2>
+                        <div class="breadcrumb__option">
+                            <!-- <a style="text-decoration: underline;" href="{% url 'bboard:account_create' %}">Додати проєкт</a></li> -->
+                            <span> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <table>
+                            <thead>
+<!--                                 <tr>
+                                    <th class="shoping__product">Products</th>
+                                    <th>Price</th> -->
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for account in accounts %}
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        {% if account.image %}
+                                        <img src="{{ account.image.url }}" style="height: 40px; width: 40px;" alt="">
+                                        {% else %}
+                                        {% get_default_account_image as images %}
+                                        {% for image in images %}
+                                        <img src="{{ image.image.url }}" style="height: 40px; width: 40px;" alt="">
+                                        {% endfor %}
+                                        {% endif %}
+                                        <h5><a href="{{ account.get_absolute_url }}">{{ account.name }}</a></h5>
+                                        
+                                    </td>
+
+                                    
+                                    
+                                    
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+<!--             <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__btns">
+                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Upadate Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__continue">
+                        <div class="shoping__discount">
+                            <h5>Discount Codes</h5>
+                            <form action="#">
+                                <input type="text" placeholder="Enter your coupon code">
+                                <button type="submit" class="site-btn">APPLY COUPON</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__checkout">
+                        <h5>Cart Total</h5>
+                        <ul>
+                            <li>Subtotal <span>$454.98</span></li>
+                            <li>Total <span>$454.98</span></li>
+                        </ul>
+                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- Shoping Cart Section End -->
+
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn selydsite.wsgi --log-file -
