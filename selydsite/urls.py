@@ -29,6 +29,7 @@ sitemaps = {
 }
 
 
+
 urlpatterns = [
     path('9e6f6df9e91cc205c504e2ea42d4fbb532a742150c16cea2/', admin.site.urls),
     path('bboard/', include('bboard.urls', namespace='bboard')),
