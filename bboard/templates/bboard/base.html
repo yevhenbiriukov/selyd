@@ -326,7 +326,7 @@
                         {% if project.image %}
                         <div class="categories__item set-bg" data-setbg="{{ project.image.url }}">
                         {% else %}
-                        {% get_default_product_image as images %}
+                        {% get_default_account_image as images %}
                         {% for image in images %}
                         <div class="categories__item set-bg"
                             data-setbg="{{ image.image.url }}">
