@@ -1,7 +1,7 @@
 {% extends "bboard/base.html" %}
 {% load thumbnail %}
 {% load bboard_tags %}
-{% load cloudinary %}
+
 
 
 <!-- Хлебные крошки сделать анкорами
@@ -104,6 +104,12 @@
                             {% if product.image %}
                             <img class="product__details__pic__item--large"
                                 src='{{ product.image.url }}' alt="">
+                            {% else %}
+                            {% get_default_product_image as images %}
+                            {% for image in images %}
+                            <img class="product__details__pic__item--large"
+                                src='{{ image.image.url }}' alt="">
+                            {% endfor %}
                             {% endif %}
                             <!-- <img class="product__details__pic__item--large"
                                 src='' style="width: 100px;" alt="3"> -->
@@ -124,7 +130,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
                         {% if product.is_discount %}
-                        <h3>{{ product.name }} (знижка - {{ product.discount_val }}%)</h3>
+                        <h3>{{ product.name }} (знижка {{ product.discount_val }}%)</h3>
                         {% else %}
                         <h3>{{ product.name }}</h3>
                         {% endif %}
@@ -289,9 +295,17 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product__item">
+                    <!-- <div class="product__item"> Native attributes -->
+                    <div class="product__discount__item"> <!-- My attributes -->
                         {% if product.image %}
-                        <div class="product__item__pic set-bg" data-setbg="{{ product.image.url }}">
+                        <!-- <div class="product__item__pic set-bg" data-setbg="{{ product.image.url }}"> Native attributes -->
+                        <div class="product__discount__item__pic set-bg" data-setbg="{{ product.image.url }}"> <!-- My attributes -->
+                        {% else %}
+                        {% get_default_product_image as images %}
+                        {% for image in images %}
+                        <!-- <div class="product__item__pic set-bg" data-setbg="{{ image.image.url }}"></div> Native attributes -->
+                        <div class="product__discount__item__pic set-bg" data-setbg="{{ image.image.url }}"></div> <!-- My attributes -->
+                        {% endfor %}
                         {% endif %}
                             <!-- <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
