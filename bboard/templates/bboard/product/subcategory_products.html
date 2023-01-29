@@ -105,6 +105,11 @@
                                     <td class="shoping__cart__item">
                                         {% if product.image %}
                                         <img src="{{ product.image.url }}" style="height: 40px; width: 40px;" alt="">
+                                        {% else %}
+                                        {% get_default_product_image as images %}
+                                        {% for image in images %}
+                                        <img src="{{ image.image.url }}" style="height: 40px; width: 40px;" alt="">
+                                        {% endfor %}
                                         {% endif %}
                                         <h5>
                                             <a href="{% url 'bboard:product-detail' product.pk %}">{{ product.name }}</a>
