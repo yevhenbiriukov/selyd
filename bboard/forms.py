@@ -44,7 +44,7 @@ class DepartmentForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'summary', 'description', 'tags', 'availability_status',
+        fields = ['name', 'summary', 'description', 'availability_status',
                 'category', 'subcategory', 'department', 'price', 'new_price', 'image',
                 'banner', 'account']
         
