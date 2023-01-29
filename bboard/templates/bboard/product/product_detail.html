@@ -72,6 +72,12 @@
     <!-- Breadcrumb Section Begin -->
     {% if product.banner %}
     <section class="breadcrumb-section set-bg" data-setbg="{{ product.banner.url }}">
+    {% else %}
+    {% get_default_banner as banners %}
+    {% for banner in banners %}
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{{ banner.image.url }}">
+    {% endfor %}
     {% endif %}
         <div class="container">
             <div class="row">
