@@ -367,6 +367,11 @@
                     <div class="featured__item">
                         {% if product.image %}
                         <div class="featured__item__pic set-bg" data-setbg="{{ product.image.url }}">
+                        {% else %}
+                        {% get_default_product_image as images %}
+                        {% for image in images %}
+                        <div class="featured__item__pic set-bg" data-setbg="{{ image.image.url }}"></div>
+                        {% endfor %}
                         {% endif %}
                             <!-- <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -420,6 +425,11 @@
                                     <div class="latest-product__item__pic">
                                         {% if product.image %}
                                         <img src="{{ product.image.url }}" alt="">
+                                        {% else %}
+                                        {% get_default_product_image as images %}
+                                        {% for image in images %}
+                                        <img src="{{ image.image.url }}" alt="">
+                                        {% endfor %}
                                         {% endif %}
                                     </div>
                                     <div class="latest-product__item__text">
@@ -435,6 +445,11 @@
                                     <div class="latest-product__item__pic">
                                         {% if product.image %}
                                         <img src="{{ product.image.url }}" alt="">
+                                        {% else %}
+                                        {% get_default_product_image as images %}
+                                        {% for image in images %}
+                                        <img src="{{ image.image.url }}" alt="">
+                                        {% endfor %}
                                         {% endif %}
                                     </div>
                                     <div class="latest-product__item__text">
