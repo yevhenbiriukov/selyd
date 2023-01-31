@@ -92,7 +92,7 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Product Details Section Begin -->
-    <section class="product-details spad">
+    <!-- <section class="product-details spad"> -->
         <div class="container">
             <div class="row">
                 
@@ -125,7 +125,7 @@
                                     
                                     <p>{{ article.summary|safe }}</p>
                                     
-                                    <p class="tags">
+                                    <!-- <p class="tags">
                                         Tags:
                                         {% for tag in product.tags.all %}
                                         <a href="{% url 'bboard:product_list_by_tag' tag.slug %}">
@@ -133,7 +133,7 @@
                                         </a>
                                         {% if not forloop.last %}, {% endif %}
                                         {% endfor %}
-                                        </p>
+                                        </p> -->
 
 
 
@@ -181,7 +181,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    <!-- </section> -->
     <!-- Product Details Section End -->
 
     <!-- Related Product Section Begin -->
