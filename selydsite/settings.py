@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['selyd.herokuapp.com', '127.0.0.1', 'localhost']
 
