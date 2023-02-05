@@ -2,6 +2,7 @@
 {% load static %}
 {% load thumbnail %}
 {% load cloudinary %}
+{% load recaptcha3 %}
 
 
 <!DOCTYPE html>
@@ -39,6 +40,9 @@
     {% comment %} <script src="{% static 'bboard/js/jquery.nice-select.min.js' %}"></script> {% endcomment %}
     <script src="{% static 'bboard/js/jquery-ui.min.js' %}"></script>
     <script src="{% static 'bboard/js/jquery.slicknav.js' %}"></script>
+
+    {% recaptcha_init %}
+    {% recaptcha_ready action_name='homepage' %}
 
 </head>
 
