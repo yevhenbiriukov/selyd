@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-=y4ry2ue-r)x*j&=14-1h0%%9x&8gf^8n_9swv9f%y=!r=i7t('
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+# SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

@@ -1,5 +1,5 @@
 asgiref==3.5.1
-backports.zoneinfo==0.2.1;python_version<"3.9"
+backports.zoneinfo==0.2.1
 certifi==2022.5.18.1
 charset-normalizer==2.0.12
 cloudinary==1.29.0
@@ -9,12 +9,14 @@ Django==4.0.4
 django-ckeditor==6.4.2
 django-cloudinary-storage==0.3.0
 django-js-asset==2.0.0
+django-ranged-response==0.2.0
+django-simple-captcha==0.5.17
 django-taggit==3.0.0
 easy-thumbnails==2.8.1
 gunicorn==20.1.0
 idna==3.3
 importlib-metadata==4.11.3
-lxml
+lxml==4.8.0
 Markdown==3.3.7
 Pillow==9.1.0
 psycopg2==2.9.3
