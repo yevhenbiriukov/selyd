@@ -31,6 +31,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-=y4ry2ue-r)x*j&=14-1h0%%9x&8gf^8n_9swv9f%y=!r=i7t('
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+GOOGLE_RECAPTCHA_SITE_KEY = '6Lf7wlQgAAAAACrlMSjv6_B9tqChh-yt7Td19xWk' #your reCAPTCHA SITE key
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lf7wlQgAAAAAJ5NzXU8Hnsr_6NZ_lwo3J12nLT4' #your reCAPTCHA SECRET key
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -47,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     ######## My apps ########
+    'captcha',
     'bboard.apps.BboardConfig',
     'taggit',
     'easy_thumbnails',

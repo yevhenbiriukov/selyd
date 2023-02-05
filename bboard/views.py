@@ -367,6 +367,8 @@ class RegisterUser(CreateView):
     success_url = reverse_lazy('bboard:login_user')
 
 
+from django.shortcuts import render
+from .my_captcha import FormWithCaptcha
 class LoginUser(LoginView):
     # Вместо этого метода можно использовать константу LOGIN_REDIRECT_URL в настройках - 
     # эффект будет тот же - перенаправление
@@ -375,6 +377,11 @@ class LoginUser(LoginView):
     
     def get_success_url(self):
         return reverse_lazy('bboard:index')
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginUser, self).get_context_data(**kwargs)
+        context['captcha'] = FormWithCaptcha
+        return context
 
 # Как еще можно использовать систему отправки по e-mail:
 # - чтобы пользователи подавали заявки на участие в проекте. Только нужно будет ставить ограничение по отправленным сообщениям с одного устройства
