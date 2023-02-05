@@ -74,6 +74,6 @@ class RegisterUserForm(UserCreationForm):
 
 from captcha.fields import CaptchaField
 class LoginUserForm(AuthenticationForm):
-    captcha = CaptchaField(label='Bвeдитe текст с картинки', error_messages={'invalid': 'Невірний текст'})
+    captcha = CaptchaField(label='Введіть текст з картинки', error_messages={'invalid': 'Невірний текст'})
     username = forms.CharField(label='Логін', widget=forms.TextInput(attrs={'class': 'form-input'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
