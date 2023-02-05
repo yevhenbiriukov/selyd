@@ -71,10 +71,9 @@ class RegisterUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
-        
 
-from snowpenguin.django.recaptcha3.fields import ReCaptchaField
+from captcha.fields import CaptchaField
 class LoginUserForm(AuthenticationForm):
-    captcha = ReCaptchaField(score_threshold=0.5)
+    captcha = CaptchaField(label='Bвeдитe текст с картинки', error_messages={'invalid': 'Невірний текст'})
     username = forms.CharField(label='Логін', widget=forms.TextInput(attrs={'class': 'form-input'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))

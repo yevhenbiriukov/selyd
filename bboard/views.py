@@ -1,4 +1,5 @@
 from typing import IO
+from django.conf import settings
 from django.urls.base import reverse_lazy
 from .models import *
 from django.shortcuts import render, get_object_or_404
@@ -367,8 +368,6 @@ class RegisterUser(CreateView):
     success_url = reverse_lazy('bboard:login_user')
 
 
-# from django.shortcuts import render
-# from .my_captcha import FormWithCaptcha
 class LoginUser(LoginView):
     # Вместо этого метода можно использовать константу LOGIN_REDIRECT_URL в настройках - 
     # эффект будет тот же - перенаправление
@@ -380,7 +379,7 @@ class LoginUser(LoginView):
 
     # def get_context_data(self, **kwargs):
     #     context = super(LoginUser, self).get_context_data(**kwargs)
-    #     context['captcha'] = FormWithCaptcha
+    #     context['recaptcha_site_key'] = settings.GOOGLE_RECAPTCHA_SITE_KEY
     #     return context
 
 # Как еще можно использовать систему отправки по e-mail:
