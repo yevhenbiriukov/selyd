@@ -26,7 +26,7 @@ class City(models.Model):
     class Meta:
         ordering = ['name']
         verbose_name = 'Місто'
-        verbose_name_plural = 'Місто'
+        verbose_name_plural = 'Міста'
 
 
 class Account(models.Model):
@@ -54,7 +54,7 @@ class Account(models.Model):
     summary = models.TextField(
         blank=True,
         default = 'Товар/послуга створена для вас',
-        help_text='Опис товара/послуги, яку пропонуєте (необов\'язково)',
+        help_text='Опис товара/послуги, що пропонуєте (необов\'язково)',
         max_length=3000,
         null=True,
         verbose_name='Опис')
@@ -322,9 +322,9 @@ class Product(models.Model):
     #     # сюда нужно будет прикрутить человекопонятные описания для вывода на странице
         blank=True,)
     AVAILABILITY_STATUS_CHOICES = (
-        ('y', 'Да'),
-        ('n', 'Нет'),
-        ('o', 'Під заказ / По запису'),)
+        ('y', 'Так'),
+        ('n', 'Ні'),
+        ('o', 'Під заказ / За записом'),)
     availability_status = models.CharField(
         choices=AVAILABILITY_STATUS_CHOICES,
         default='y',
