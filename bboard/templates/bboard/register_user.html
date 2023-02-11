@@ -16,7 +16,7 @@
     <!-- Breadcrumb Section Begin -->
     {% get_default_banner as banners %}
     {% for banner in banners %}
-    <section class="breadcrumb-section set-bg" data-setbg="{% thumbnail banner.image '250x0' %}">
+    <section class="breadcrumb-section set-bg" data-setbg="{{ banner.image.url }}">
         {% endfor %}
         <div class="container">
             <div class="row">
