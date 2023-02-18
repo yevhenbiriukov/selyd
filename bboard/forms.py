@@ -2,6 +2,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.forms import ModelForm, fields
 from .models import *
 from django import forms
+from captcha.fields import CaptchaField
 
 
 class EmailProductForm(forms.Form):
@@ -63,6 +64,7 @@ class ProductForm(forms.ModelForm):
             pass
         
 class RegisterUserForm(UserCreationForm):
+    captcha = CaptchaField(label='Введіть текст з картинки', error_messages={'invalid': 'Невірний текст'})
     username = forms.CharField(label='Логін', widget=forms.TextInput(attrs={'class': 'form-input'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
@@ -72,7 +74,6 @@ class RegisterUserForm(UserCreationForm):
         model = User
         fields = ('username', 'email', 'password1', 'password2')
 
-from captcha.fields import CaptchaField
 class LoginUserForm(AuthenticationForm):
     captcha = CaptchaField(label='Введіть текст з картинки', error_messages={'invalid': 'Невірний текст'})
     username = forms.CharField(label='Логін', widget=forms.TextInput(attrs={'class': 'form-input'}))
