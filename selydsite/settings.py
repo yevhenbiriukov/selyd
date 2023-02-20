@@ -37,7 +37,13 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['selyd.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'selyd.herokuapp.com',
+    'selyd.club',
+    'www.selyd.club',
+    '127.0.0.1',
+    'localhost',
+]
 
 
 # Application definition
