@@ -313,7 +313,7 @@ class Product(models.Model):
         verbose_name='Додаткові відомості')
     social_links = models.TextField(
         blank=True,
-        help_text='Посилання на соцмережі (необов\'язково)',
+        help_text='Посилання на соцмережі (необов\'язково). Пиши посилання через пробіл, наприклад: https://www.instagram.com/yevhenchlothar/ https://www.facebook.com/yevhen.chlothar',
         max_length=300,
         null=True,
         verbose_name='Посилання')
