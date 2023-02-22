@@ -198,11 +198,15 @@ class Category(models.Model):
         max_length=1,
         verbose_name='Категорія чого')
     image = models.ImageField(
+        blank=True,
         help_text='Значок чого',
+        null=True,
         upload_to='categories/images/',
         verbose_name='Значок')
     banner = models.ImageField(
+        blank=True,
         help_text='Банер категорії',
+        null=True,
         upload_to='categories/banners/',
         verbose_name='Банер')
 
@@ -231,11 +235,15 @@ class Subcategory(models.Model):
         related_name='category_subcategories',
         verbose_name='Категорія')
     image = models.ImageField(
+        blank=True,
         help_text='Значок підкатегорії',
+        null=True,
         upload_to='subcategories/images/',
         verbose_name='Значок')
     banner = models.ImageField(
+        blank=True,
         help_text='Банер підкатегорії',
+        null=True,
         upload_to='subcategories/banners/',
         verbose_name='Банер')
 
