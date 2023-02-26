@@ -300,6 +300,12 @@
                                 {% if product.image %}
                                 <div class="product__item__pic set-bg"
                                     data-setbg="{{ product.image.url }}">
+                                {% else %}
+                                {% get_default_product_image as images %}
+                                {% for image in images %}
+                                <div class="product__item__pic set-bg"
+                                    data-setbg="{{ image.image.url }}">
+                                {% endfor %}
                                 {% endif %}
                                     <!-- <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
